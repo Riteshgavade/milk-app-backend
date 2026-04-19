@@ -32,7 +32,7 @@ if not st.session_state.logged_in:
 st.sidebar.button("Logout", on_click=lambda: st.session_state.update({"logged_in": False}))
 
 # --- DATABASE CONNECTION ---
-MONGO_URL = "mongodb+srv://milk_admin:milk_admin@cluster0.p3vd1zt.mongodb.net/?appName=Cluster0"
+MONGO_URL = os.getenv("MONGO_URL")
 
 @st.cache_resource
 def init_connection():
